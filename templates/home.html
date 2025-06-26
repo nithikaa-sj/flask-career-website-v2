@@ -25,24 +25,40 @@
   
    <body>
      
-     
+     <div class=".bg-light.bg-gradient">
      <div class="container">
-     <h1 class="text-center mt-4 mb-4">Happy Careers</h1>
+     <h1 class="text-center mt-4 mb-4">
+       {{company_name}}
+     </h1>
+
+       
      <img class=".img-fluid" src="static/career_quotes.jpg" width="100%" height="200">
      <h2 class="text-center mt-4 mb-4">About Happy</h2>
      <P class="blockquote">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</P>
+
+       
      <H2 class="text-center mt-4 mb-4">Open Positions</H2>
-     <p>TODO</p>
+     <p>
+        {%for job in jobs%}
+           {% include 'jobitem.html' %}
+        {% endfor %}
+       
+     </p>
+
+       
      <div style="text-align:center;">
-     <button src="contact.html">Contact Us</button>
+     <button type="button" class="btn btn-primary btn-lg" src="contact.html">Contact Us</button>
      </div>
+       <footer>
+         <p class="text-center mt-4 mb-0">&copy; 2025 Happy Careers</p>
+
+       </footer>
     </div>
+     </div>
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     </body>
-    <footer>
-      <p style="text-align:center;">&copy; 2025 Happy Careers</p>
-    </footer>
+    
   
 </html>
    
