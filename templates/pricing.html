@@ -1,0 +1,130 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>Happy Careers - Pricing</title>
+
+          <!-- Bootstrap CSS -->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+          <!-- Bootstrap Icons -->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+          <style>
+            .card:hover {
+              transform: scale(1.03);
+              transition: 0.3s ease-in-out;
+            }
+          </style>
+        </head>
+        <body>
+
+          <section class="container my-5">
+            <h2 class="text-center mb-4">Choose the Plan That’s Right for You</h2>
+            <div class="row g-4 justify-content-center">
+
+              <!-- Free Plan -->
+              <div class="col-md-4">
+                <div class="card border-0 shadow h-100 text-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Free</h5>
+                    <h6 class="card-subtitle mb-3 text-muted">₹0 / month</h6>
+                    <ul class="list-unstyled mb-3">
+                      <li><i class="bi bi-check-circle text-success"></i> Apply to jobs</li>
+                      <li><i class="bi bi-check-circle text-success"></i> Resume builder</li>
+                      <li><i class="bi bi-x-circle text-danger"></i> Premium alerts</li>
+                      <li><i class="bi bi-x-circle text-danger"></i> Fast-track support</li>
+                    </ul>
+                    <a href="/" class="btn btn-outline-primary">Get Started</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Premium Plan -->
+              <div class="col-md-4">
+                <div class="card border-0 shadow-lg h-100 text-center bg-primary text-white">
+                  <div class="card-body">
+                    <h5 class="card-title">Premium</h5>
+                    <h6 class="card-subtitle mb-3 text-light">₹199 / month</h6>
+                    <ul class="list-unstyled mb-3">
+                      <li><i class="bi bi-check-circle-fill"></i> All Free Features</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Priority job alerts</li>
+                      <li><i class="bi bi-check-circle-fill"></i> 1-on-1 support</li>
+                      <li><i class="bi bi-check-circle-fill"></i> Resume feedback</li>
+                    </ul>
+                    <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#contactPremiumModal">
+                      Upgrade Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enterprise Plan -->
+              <div class="col-md-4">
+                <div class="card border-0 shadow h-100 text-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Enterprise</h5>
+                    <h6 class="card-subtitle mb-3 text-muted">Custom Pricing</h6>
+                    <ul class="list-unstyled mb-3">
+                      <li><i class="bi bi-check-circle text-success"></i> Post unlimited jobs</li>
+                      <li><i class="bi bi-check-circle text-success"></i> Highlighted listings</li>
+                      <li><i class="bi bi-check-circle text-success"></i> Analytics & reports</li>
+                      <li><i class="bi bi-check-circle text-success"></i> Dedicated support</li>
+                    </ul>
+                    <a href="mailto:nithikaa24@gmail.com?subject=Enterprise%20Plan%20Inquiry&body=Hello%20Happy%20Careers%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20your%20Enterprise%20Plan.%20Please%20find%20my%20details%20below%3A%0D%0A%0D%0ACompany%20Name%3A%0D%0AContact%20Person%3A%0D%0AEmail%3A%0D%0ACountry%3A%0D%0AEstimated%20Monthly%20Job%20Posts%3A%0D%0ADescription%2FNotes%3A%0D%0A%0D%0AThank%20you%2C%0D%0A%5BYour%20Name%5D"
+                       class="btn btn-outline-dark">Contact Sales</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Premium Plan Modal -->
+          <div class="modal fade" id="contactPremiumModal" tabindex="-1" aria-labelledby="contactPremiumModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content shadow">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="contactPremiumModalLabel">Upgrade to Premium</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Form with mailto -->
+                <form action="mailto:nithikaa24@gmail.com" method="POST" enctype="text/plain">
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="fullName" class="form-label">Full Name</label>
+                      <input type="text" class="form-control" id="fullName" name="Full Name" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="emailPremium" class="form-label">Email Address</label>
+                      <input type="email" class="form-control" id="emailPremium" name="Email" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="countryPremium" class="form-label">Country</label>
+                      <input type="text" class="form-control" id="countryPremium" name="Country">
+                    </div>
+                    <div class="mb-3">
+                      <label for="domainPremium" class="form-label">Preferred Job Domain</label>
+                      <input type="text" class="form-control" id="domainPremium" name="Preferred Job Domain">
+                    </div>
+                    <div class="mb-3">
+                      <label for="messagePremium" class="form-label">Message / Notes</label>
+                      <textarea class="form-control" id="messagePremium" name="Message" rows="3"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Request Upgrade</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Bootstrap JS Bundle (needed for modal to work) -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        </body>
+        </html>
