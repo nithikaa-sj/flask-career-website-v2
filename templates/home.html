@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-       <meta charset="utf-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Flask Replit</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-      <style>
-        
-        #banner{
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 100%;
-          height:360px;
-          object-fit: cover;
-        }
-        .body-text{
-          font-family:"roboto";
-        }
-        
-          
-      </style>
-   </head>
-  
-   <body>
 
-     {% include 'nav.html' %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flask Replit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <style>
+    #banner {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+    }
 
-     <img class=".img-fluid" src="static/career_quotes.jpg" width="100%" height="200">
-     
-     <div class=".bg-light.bg-gradient">
-     <div class="container">
-     <h1 class="text-center mt-4 mb-4">
-       {{company_name}}
-     </h1>
+    .body-text {
+      font-family: "roboto";
+    }
+  </style>
+</head>
 
-       
-     
-     <h2 class="text-center mt-4 mb-4">About Happy!!</h2>
-       <div class="row">
-          <div class="col-md-6">
-     <p class="blockquote">At HappyCareers, we are committed to simplifying the job search and hiring process for both candidates and companies. Since our inception, our platform has consistently provided value to job seekers across the globe by offering personalized opportunities, resume tools, and premium support. With cutting-edge features, employer analytics, and global access, HappyCareers remains a trusted name in the online recruitment space. Whether you're a fresher or a seasoned professional, we're here to help you take the next confident step in your career journey.</p>
-       </div>
-       <div class="d-none d-md-block col-md-6">
-         <img src="/static/people.jpg" style="height:350px;border-radius:4px;">
-       </div>
-     </div>
-       
-     <H2 class="text-center mt-4 mb-4">Open Positions</H2>
-     <p>
+<body>
+
+  {% include 'nav.html' %}
+
+  {% include 'banner.html' %}
+
+  <div class=".bg-light.bg-gradient">
+    <div class="container">
+      <h1 class="text-center mt-4 mb-4">
+        {{company_name}}
+      </h1>
+
+
+
+      <h2 class="text-center mt-4 mb-4">About Happy!!</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="blockquote">At HappyCareers, we are committed to simplifying the job search and hiring process for
+            both candidates and companies. Since our inception, our platform has consistently provided value to job
+            seekers across the globe by offering personalized opportunities, resume tools, and premium support. With
+            cutting-edge features, employer analytics, and global access, HappyCareers remains a trusted name in the
+            online recruitment space. Whether you're a fresher or a seasoned professional, we're here to help you take
+            the next confident step in your career journey.</p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+          <img src="/static/people.jpg" style="height:350px;border-radius:4px;">
+        </div>
+      </div>
+
+      <H2 class="text-center mt-4 mb-4">Open Positions</H2>
+      <p>
         {%for job in jobs%}
-           {% include 'jobitem.html' %}
+        {% include 'jobitem.html' %}
         {% endfor %}
-       
-     </p>
 
-       
-     <div style="text-align:center;">
-     <a href="mailto:nithikaa24@gmail.com?subject=Job%20Application%20Inquiry&body=Hi%20Team%2C%0D%0A%0D%0AI%20would%20like%20to%20apply%20or%20ask%20a%20question.%20Here%20are%20my%20details%3A%0D%0A%0D%0AFull%20Name%3A%20%3Cyour%20name%3E%0D%0AEmail%3A%20%3Cyour%20email%3E%0D%0APhone%20Number%3A%20%3Cyour%20number%3E%0D%0ACountry%3A%20%3CCountry%20you're%20applying%20from%3E%0D%0AInterested%20Role%3A%20%3Ce.g.%2C%20Frontend%20Developer%2C%20Data%20Analyst%2C%20etc.%3E%0D%0ADomain%3A%20%3Ce.g.%2C%20Web%20Development%2C%20AI%2FML%2C%20Cybersecurity%2C%20etc.%3E%0D%0AExperience%3A%20%3Ce.g.%2C%202%20years%2C%20Fresher%2C%20etc.%3E%0D%0AMessage%3A%20%3Cyour%20Message%20%2F%20Doubts%20%2F%20Intentions%3E%0D%0A%0D%0AThank%20you!%0D%0A" type="button" class="btn btn-primary btn-lg" src="contact.html">Contact Us</a>
-     </div>
+      </p>
 
-       {% include 'footer.html' %}
-       
+
+      <div style="text-align:center;">
+        <a href="mailto:nithikaa24@gmail.com?subject=Job%20Application%20Inquiry&body=Hi%20Team%2C%0D%0A%0D%0AI%20would%20like%20to%20apply%20or%20ask%20a%20question.%20Here%20are%20my%20details%3A%0D%0A%0D%0AFull%20Name%3A%20%3Cyour%20name%3E%0D%0AEmail%3A%20%3Cyour%20email%3E%0D%0APhone%20Number%3A%20%3Cyour%20number%3E%0D%0ACountry%3A%20%3CCountry%20you're%20applying%20from%3E%0D%0AInterested%20Role%3A%20%3Ce.g.%2C%20Frontend%20Developer%2C%20Data%20Analyst%2C%20etc.%3E%0D%0ADomain%3A%20%3Ce.g.%2C%20Web%20Development%2C%20AI%2FML%2C%20Cybersecurity%2C%20etc.%3E%0D%0AExperience%3A%20%3Ce.g.%2C%202%20years%2C%20Fresher%2C%20etc.%3E%0D%0AMessage%3A%20%3Cyour%20Message%20%2F%20Doubts%20%2F%20Intentions%3E%0D%0A%0D%0AThank%20you!%0D%0A"
+          type="button" class="btn btn-primary btn-lg" src="contact.html">Contact Us</a>
+      </div>
+
+      {% include 'footer.html' %}
+
     </div>
-     </div>
+  </div>
 
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    </body>
-    
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+</body>
+
+
 </html>
-   
-    
