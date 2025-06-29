@@ -1,6 +1,12 @@
 from flask import Flask, render_template, request, jsonify
 from database import load_jobs_from_db
 from database import load_job_from_db, add_application_to_db
+from mailjet_rest import Client
+import os
+
+mailjet = Client(auth=(os.environ['MAILJET_API_KEY'],
+                       os.environ['MAILJET_SECRET_KEY']),
+                 version='v3.1')
 
 app = Flask(__name__)
 
@@ -11,6 +17,28 @@ def hello_world():
     return render_template("home.html",
                            jobs=jobs,
                            company_name="Happy Careers")
+
+
+def send_email(to_email, to_name, subject, body):
+    data = {
+        'Messages': [{
+            "From": {
+                "Email": "mirthulajagadesh@gmail.com",
+                "Name": "Happy Careers"
+            },
+            "To": [{
+                "Email": to_email,
+                "Name": to_name
+            }],
+            "Subject": subject,
+            "TextPart": body,
+            "HTMLPart": body,
+            "CustomID": "AppGettingStartedTest"
+        }]
+    }
+    result = mailjet.send.create(data=data)
+    print(result.status_code)
+    print(result.json())
 
 
 @app.route('/faqs')
@@ -56,6 +84,8 @@ def apply_to_json_job(id):
     return jsonify(data)
 
 
+
+
 @app.route("/job/<id>/apply", methods=["POST"])
 def apply_to_job(id):
     job = load_job_from_db(id)
@@ -64,6 +94,23 @@ def apply_to_job(id):
     # display an acknowledgemnet
     data = request.form
     add_application_to_db(id, data)
+
+    send_email(
+        to_email=data['email'],
+        to_name=data['fullname'],
+        subject="Happy Careers Application Confirmation",
+        body=
+        f"Hi {data['fullname']},<br><br>Thank you for applying to {job['title']} at Happy Careers.<br><br>We will be in touch soon!<br><br>Best regards,<br>Happy Careers Team"
+    )
+
+    send_email(
+        to_email="nithikaajagadesh@gmail.com",
+        to_name="Admin",
+        subject=f"{data['fullname']} has applied for {job['title']}",
+        body=
+        f"New Application received:\n\nName: {data['fullname']}\nEmail: {data['email']}\nLinkedIn: {data['linkedin']}\nEducation: {data['education']}\nWork Experience: {data['work_experience']}"
+    )
+
     return render_template('application_submitted.html',
                            application=data,
                            job=job)

@@ -7,17 +7,17 @@
 <form action="/job/{{job.id}}/apply" method="POST">
   <div>
     <label>Full Name</label><br>
-    <input type="text" name="fullname" placeholder="Aani Bruno">
+    <input type="name" required name="fullname" placeholder="Aani Bruno">
   </div>
 
   <div>
     <label>Email</label><br>
-    <input type="text" name="email" placeholder="aani@xyz.com">
+    <input type="text" name="email" required placeholder="aani@xyz.com">
   </div>
 
   <div>
     <label>LinkedIn</label><br>
-    <input type="text" name="linkedin" placeholder="linkedin.com/in/aani">
+    <input type="url" name="linkedin" placeholder="linkedin.com/in/aani">
   </div>
 
   <div>
@@ -32,10 +32,11 @@
 
   <div>
     <label>Resume URL</label><br>
-    <input type="text" name="resume_url">
+    <input type="url" name="resume_url">
   </div>
 
-  
+  <div class="h-captcha" data-sitekey=captcha_secret></div>
 
   <input type="submit">
 </form>
+<script src="https://hcaptcha.com/1/api.js" async defer></script>
