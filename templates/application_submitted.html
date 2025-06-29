@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Application Submitted</title>
+  {% include 'bootstrap.html' %}
+</head>
+
+<body>
+
+  {% include 'nav.html' %}
+  <img src="https://www.shutterstock.com/image-vector/success-growth-motivational-quotes-poster-600nw-2478595643.jpg"
+    class="img-fluid d-block" style="width:100%;height: 200px;" alt="Motivational Banner">
+  <div class=".bg-light.bg-gradient">
+    <div class="container">
+      <h1 class="text-center mt-4 mb-4">
+        Happy Careers
+      </h1>
+      <p>Your application for the role of <b>{{job['title']}}</b> at Happy has been submitted.</p>
+      <b>Full Name</b>
+      <div class="mb-2">{{application['fullname']}}</div>
+
+      <b>Email</b>
+      <div class="mb-2">{{application['email']}}</div>
+
+      <b>LinkedIn URL</b>
+      <div class="mb-2">{{application['linkedin']}}</div>
+
+      <b>Education</b>
+      <div class="mb-2">{{application['education']}}</div>
+
+      <b>Work Experience</b>
+      <div class="mb-2">{{application['work_experience']}}</div>
+
+      <b>Resume URL</b>
+      <div class="mb-2">{{application['resume_url']}}</div>
+    </div>
+  </div>
+
+
+  {% include 'footer.html' %}
+
+</body>
+
+</html>
